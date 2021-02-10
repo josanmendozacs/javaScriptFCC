@@ -14,8 +14,16 @@ function convertToRoman(num) {
         "V",
         "IV",
         "I"
-    ]
-    return num;
-   }
+    ];
+
+    var romanizedNum = "";
+    for (var index = 0; index < decimalNum.length; index++) {
+        while (decimalNum[index] <= num) {
+            romanizedNum += romanNum[index];
+            num -= decimalNum[index];
+        }
+    }
+    return romanizedNum;
+   };
    
    convertToRoman(36);
